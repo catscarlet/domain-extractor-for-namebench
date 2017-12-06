@@ -6,4 +6,4 @@ $domainlist = new extractDomainFromChrome();
 
 //$domainlist->outputNamebenchDomainList();
 
-print_r($domainlist->domainlist);
+print_r($domainlist->getdomainlist());

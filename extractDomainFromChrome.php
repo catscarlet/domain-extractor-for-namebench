@@ -10,13 +10,14 @@ class MyDB extends SQLite3
 
 class extractDomainFromChrome
 {
-    public $domainlist = array();
+    private $domainlist = array();
 
     public function __construct($filename = NULL)
     {
         if ($filename === NULL) {
             $filename = 'History';
         }
+
         $db = new MyDB($filename);
 
         $domainlist = array();
@@ -61,5 +62,10 @@ class extractDomainFromChrome
         foreach ($domainlist as $domain) {
             echo 'A '.$domain.'.'."\n";
         }
+    }
+
+    public function getDomainlist()
+    {
+        return $this->domainlist;
     }
 }

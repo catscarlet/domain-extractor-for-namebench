@@ -2,7 +2,7 @@
 
 class extractDomainFromSslibevLog
 {
-    public $domainlist = array();
+    private $domainlist = array();
 
     public function __construct($filename = null)
     {
@@ -40,5 +40,9 @@ class extractDomainFromSslibevLog
         }
 
         return $result;
+    }
+
+    public function getdomainlist() {
+        return $this->domainlist;
     }
 }
